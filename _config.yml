@@ -2,3 +2,9 @@ title: Gustav Vising
 author: Gustav Vising
 description: ""
 theme: minima
+
+minima:
+  show_excerpts: false
+
+feed:
+  disable: true
