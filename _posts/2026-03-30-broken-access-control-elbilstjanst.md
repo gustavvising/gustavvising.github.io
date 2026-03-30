@@ -26,7 +26,7 @@ Då upptäckte jag att appen kommunicerade över GraphQL. Efter lite mer trixand
 
 
 Jag testade mig fram och ganska snart dök något upp. En mutation som hette `deleteBooking` gav inte
-unauthorized som de flesta övriga funktioner. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
+unauthorized som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
 
 
 Men för att det skulle vara en konkret risk så måste det gå att få tag på boknings-ID:n.
