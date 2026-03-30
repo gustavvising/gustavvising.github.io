@@ -29,7 +29,7 @@ Jag testade mig fram och ganska snart dök något upp. En mutation som hette `de
 unauthorized som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
 
 
-Men för att det skulle vara en konkret risk behövdes andras boknings-ID:n.
+Men för att det skulle vara en konkret risk behövdes andra personers boknings-ID:n.
 För att få en större attackyta skapade jag en legitim session via BankID.
 Jag upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett Python-skript för att automatisera processen.
 Först anropade jag `authBankID` för att få `autoStartToken` och sedan pollade jag `authenticate` en gång i sekunden tills
