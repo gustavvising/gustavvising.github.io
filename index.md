@@ -1,1 +1,3 @@
-# Gustav Vising
+---
+layout: home
+---
