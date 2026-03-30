@@ -13,13 +13,13 @@ Tjänsten använde en app för att hyra och låsa upp deras bilar. För att iden
 var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg såg
 jag att appen använde React och hade minimalt med synlig kod. Detta berodde på att appen använde Hermes
 och själva koden fanns kompilerad i en fil som hette *index.android.bundle* i mappen *assets*. 
-&#8203;
-&#8203;
-&#8203;
+<br>
+<br>
+<br>
 ![Dekompilering av bundle-filen](/assets/images/hbc_disasm_av_bundle.png)
-&#8203;
-&#8203;
-&#8203;
+<br>
+<br>
+<br>
 Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera.
 Då upptäckte jag att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
 över queries och mutations i API:et.
