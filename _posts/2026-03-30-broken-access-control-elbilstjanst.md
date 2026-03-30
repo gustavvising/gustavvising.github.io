@@ -43,9 +43,9 @@ genom `getBookingsForCar`.
 Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
 Jag hade hittat en Broken Access Control!
 
-Om någon utnyttjade sårbarheten hade vem som helst kunnat avboka alla bokningar i systemet. Det hade kunnat stoppa alla intäkter och
-strandsätta användare som var ute. Jag kontaktade företaget för att göra responsible disclosure. Jag fick kontakt med deras CTO och de gav ersättning för buggen.
-De lyckades täppa till sårbarheten och tackade. Väldigt lärorikt, särskilt kring GraphQL, access control och hur man faktiskt hittar den här typen av buggar.
+Om sårbarheten hade utnyttjats så hade vem som helst kunnat avboka alla bokningar i systemet. Det hade kunnat stoppat deras intäkter och
+strandsatt användare som redan var ute. Jag kontaktade företaget för att göra responsible disclosure. Jag fick kontakt med deras CTO och de gav ersättning för buggen.
+De lyckades täppa till sårbarheten och tackade. Ju mer skyddat ett API ser ut, desto mer sällan kollar man vad som valideras.
 <br>
 <br>
 <br>
