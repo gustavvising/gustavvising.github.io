@@ -29,15 +29,15 @@ Jag testade mig fram och ganska snart dök något upp. En mutation som hette `de
 unauthorized som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
 
 
-Men för att det skulle ha varit en konkret risk behövdes andras boknings-ID:n.
-För att få större attackyta valde jag att skapa en legitim session via BankID.
-Jag upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett pythonskript för att automatisera processen.
+Men för att det skulle vara en konkret risk behövdes andras boknings-ID:n.
+För att få en större attackyta skapade jag en legitim session via BankID.
+Jag upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett Python-skript för att automatisera processen.
 Först anropade jag `authBankID` för att få `autoStartToken` och sedan pollade jag `authenticate` en gång i sekunden tills
-en inloggning gjordes via BankID-appen med `autoStartToken`.
+en inloggning bekräftades via BankID-appen med `autoStartToken`.
 
 
-Beväpnad med en giltig session hade jag nu tillgång till de funktioner som krävde inloggning.
-Härifrån kunde jag lista alla platser och deras fordon. Därefter kunde jag få fram bokningarna för fordon
+Beväpnad med en giltig session kunde jag utforska fler funktioner i systemet.
+Härifrån kunde jag lista alla platser och deras fordon. Därefter kunde jag hämta bokningar för fordon
 genom `getBookingsForCar`!
 
 
