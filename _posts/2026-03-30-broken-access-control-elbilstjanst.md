@@ -32,7 +32,7 @@ en inloggning bekräftades via BankID-appen med `autoStartToken`.
 
 Beväpnad med en giltig session kunde jag utforska fler funktioner i systemet.
 Härifrån kunde jag lista alla platser och deras fordon. Därefter kunde jag hämta bokningar för fordon
-genom `getBookingsForCar`!
+genom `getBookingsForCar`.
 <br>
 <br>
 ![Boknings-ID:n listade via query](/assets/images/bookings.jpg)
