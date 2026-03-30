@@ -33,7 +33,7 @@ Men för att det skulle vara en konkret risk så måste det gå att få tag på 
 För att få större attackyta valde jag att skapa en legitim session via BankID.
 Jag upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett pythonskript för att automatisera processen.
 Först anropade jag `authBankID` för att få `autoStartToken` och sedan pollade jag `authenticate` en gång i sekunden tills
-en inloggning gjorts via BankID-appen med `autoStartToken`.
+en inloggning gjordes via BankID-appen med `autoStartToken`.
 
 
 Beväpnad med en giltig session hade jag nu tillgång till de funktioner som krävde inloggning.
