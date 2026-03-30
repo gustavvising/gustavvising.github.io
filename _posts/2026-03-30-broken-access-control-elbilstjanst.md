@@ -21,7 +21,7 @@ och själva koden fanns kompilerad i en fil som hette *index.android.bundle* i m
 
 
 Efter dekompilering fick jag ut en .hasm-fil. Den började jag reverse engineera.
-Då upptäckte jag att appen kommunicerar över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
+Då upptäckte jag att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
 över queries och mutations i API:et.
 
 
