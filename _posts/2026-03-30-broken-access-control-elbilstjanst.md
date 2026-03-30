@@ -10,8 +10,8 @@ att avboka godtyckliga bokningar i en svensk elbilstjänst. I praktiken innebar 
 
 Först ville jag förstå hur systemet kommunicerade med fordonen och med backend.
 Tjänsten använde en app för att hyra och låsa upp deras bilar. För att identifiera och komma åt API:et
-var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg så kunde
-jag se att appen använde React och hade minimalt med synlig kod. Detta berodde på att appen använde Hermes
+var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg såg
+jag att appen använde React och hade minimalt med synlig kod. Detta berodde på att appen använde Hermes
 och själva koden fanns kompilerad i en fil som hette *index.android.bundle* i mappen *assets*. 
 
 
