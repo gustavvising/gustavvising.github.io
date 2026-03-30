@@ -15,7 +15,7 @@ och själva koden fanns kompilerad i en fil som hette *index.android.bundle*.
 <br>
 <br>
 ![Dekompilering av bundle-filen](/assets/images/hbc_disasm_av_bundle.png)
-*Dekompilering av index.android.bundle*
+*Dekompilering av index.android.bundle.*
 <br>
 <br>
 Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera.
@@ -37,7 +37,7 @@ genom `getBookingsForCar`.
 <br>
 <br>
 ![Boknings-ID:n listade via query](/assets/images/bookings.jpg)
-*Boknings-ID:n för ett fordon listade via en query*
+*Boknings-ID:n för ett fordon listade via en query.*
 <br>
 <br>
 Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
