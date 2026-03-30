@@ -3,6 +3,9 @@ author: Gustav Vising
 description: ""
 theme: minima
 
+jekyll-feed:
+  enabled: false
+
 plugins: []
 
 minima:
