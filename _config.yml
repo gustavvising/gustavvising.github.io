@@ -2,14 +2,3 @@ title: Gustav Vising
 author: Gustav Vising
 description: ""
 theme: minima
-
-jekyll-feed:
-  enabled: false
-
-plugins: []
-
-minima:
-  show_excerpts: false
-
-feed:
-  disable: true
