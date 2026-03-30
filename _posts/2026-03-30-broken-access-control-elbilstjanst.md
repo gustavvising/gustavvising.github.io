@@ -38,7 +38,7 @@ genom `getBookingsForCar`!
 ![Boknings-ID:n listade via query](/assets/images/bookings.jpg)
 <br>
 <br>
-Testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
+Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
 Jag hade hittat en Broken Access Control!
 
 Om någon utnyttjade sårbarheten hade vem som helst kunnat avboka alla bokningar i systemet. Det hade kunnat stoppa alla intäkter och
