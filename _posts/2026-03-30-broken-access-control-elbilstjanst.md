@@ -11,7 +11,7 @@ Först ville jag förstå hur systemet kommunicerade med fordonen och med backen
 Tjänsten använde en app för att hyra och låsa upp deras bilar. För att identifiera och komma åt API:et
 var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg såg
 jag att appen använde React och hade minimalt med synlig kod. Detta berodde på att appen använde Hermes
-och själva koden fanns kompilerad i en fil som hette *index.android.bundle* i mappen *assets*. 
+och själva koden fanns kompilerad i en fil som hette *index.android.bundle*. 
 <br>
 <br>
 ![Dekompilering av bundle-filen](/assets/images/hbc_disasm_av_bundle.png)
