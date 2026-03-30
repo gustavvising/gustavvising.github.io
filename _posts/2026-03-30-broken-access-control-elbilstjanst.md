@@ -43,7 +43,7 @@ genom `getBookingsForCar`!
 
 
 
-![Bokningsnummer listade via query](/assets/images/bookings.jpg)
+![Bokningsnummer listade via query](/assets/images/bookings.jpg){: height="350"}
 
 
 
