@@ -2,7 +2,6 @@
 layout: default
 ---
 {{ content }}
-
 <ul class="post-list">
   {% for post in site.posts %}
     <li>
@@ -11,3 +10,7 @@ layout: default
     </li>
   {% endfor %}
 </ul>
+
+<style>
+  .rss-subscribe { display: none; }
+</style>
