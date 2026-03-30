@@ -5,36 +5,35 @@ date: 2026-03-30
 ---
 
 Det här är historien om hur jag hittade en *Broken Access Control-sårbarhet* som gjorde det möjligt
-att avboka godtyckliga bokningar i en svensk elbilstjänst.
+att avboka godtyckliga bokningar i en svensk elbilstjänst. I praktiken innebar det att vem som helst kunde avboka andras bokningar.
 
 
-Först ville jag ta reda på hur systemet kommunicerade med fordon och förstå hur klienten kommunicerade med backend.
-Tjänsten använde sig av en app för att hyra och låsa upp deras bilar. För att identifiera och komma åt API:et
+Först ville jag förstå hur systemet kommunicerade med fordonen och med backend.
+Tjänsten använde en app för att hyra och låsa upp deras bilar. För att identifiera och komma åt API:et
 var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg så kunde
-jag se att appen använde sig av React och hade minimalt med synlig kod. Detta berodde på att appen använde sig av Hermes
+jag se att appen använde React och hade minimalt med synlig kod. Detta berodde på att appen använde Hermes
 och själva koden fanns kompilerad i en fil som hette *index.android.bundle* i mappen *assets*. 
 
 
 
-![Dekompilering av bundle filen](/assets/images/hbc_disasm_av_bundle.png)
+![Dekompilering av bundle-filen](/assets/images/hbc_disasm_av_bundle.png)
 
 
 
-Efter att verktyget dekompilerat filen fick jag ut en .hasm fil som jag kunde börja reverse engineera.
-Det ledde till att jag upptäckte att appen kommunicerar över GraphQL som API. Efter ytterligare trixande och
-olika former av reversing hade jag kommit fram till ett strukturerat schema av queries och mutations som
-utgjorde API:et.
+Efter dekompilering fick jag ut en .hasm-fil. Den började jag reverse engineera.
+Då upptäckte jag att appen kommunicerar över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
+över queries och mutations i API:et.
 
 
-Jag började då prova mig fram och upptäckte något intressant. En mutation som hette `deleteBooking` gav inte
+Jag testade mig fram och ganska snart dök något upp. En mutation som hette `deleteBooking` gav inte
 unauthorized som de flesta övriga funktioner. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
 
 
-Men för att det skulle vara en konkret risk så måste det gå att få tag på bokningsidnummer.
-För att få större attackyta valde jag att skapa en legitim session via bankid.
-Upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett pythonskript för att automatisera processen.
-Först kalla `authBankID` för att få `autoStartToken` och sedan polla `authenticate` en gång i sekunden tills
-en inloggning gjorts via bankidappen med `autoStartToken`.
+Men för att det skulle vara en konkret risk så måste det gå att få tag på boknings-ID:n.
+För att få större attackyta valde jag att skapa en legitim session via BankID.
+Jag upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett pythonskript för att automatisera processen.
+Först anropade jag `authBankID` för att få `autoStartToken` och sedan pollade jag `authenticate` en gång i sekunden tills
+en inloggning gjorts via BankID-appen med `autoStartToken`.
 
 
 Beväpnad med en giltig session hade jag nu tillgång till de funktioner som krävde inloggning.
@@ -43,16 +42,15 @@ genom `getBookingsForCar`!
 
 
 
-![Bokningsnummer listade via query](/assets/images/bookings.jpg)
+![Boknings-ID:n listade via query](/assets/images/bookings.jpg)
 
 
 
-Provade att skapa en ny bokning och loggade sedan ut. Satte in bokningsid i `deleteBooking`, körde och ...
-bokningen raderades!
+Testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
+Jag hade hittat en Broken Access Control!
 
 
-Om någon utnyttjade sårbarheten hade de kunnat avboka alla bokningar och på så sätt hindrat intäkter till företaget och
-ställt till det för användarna. Jag kontaktade företaget för att göra responsible disclosure. Fick kontakt med deras CTO och de gav ersättning för buggen.
-De lyckades täppa till sårbarheten och tackade. Det hela var väldigt lärorikt och jag utvecklade min förmåga att genomföra pentests
-och framförallt att hitta buggar i GraphQL API:er samt att kommunicera med företag.
+Om någon utnyttjade sårbarheten hade vem som helst kunnat avboka alla bokningar i systemet. Det hade kunnat stoppa alla intäkter och
+strandsätta användare som var ute. Jag kontaktade företaget för att göra responsible disclosure. Jag fick kontakt med deras CTO och de gav ersättning för buggen.
+De lyckades täppa till sårbarheten och tackade. Väldigt lärorikt, särskilt kring GraphQL, access control och hur man faktiskt hittar den här typen av buggar.
 
