@@ -3,6 +3,8 @@ author: Gustav Vising
 description: ""
 theme: minima
 
+plugins: []
+
 minima:
   show_excerpts: false
 
