@@ -47,7 +47,7 @@ genom `getBookingsForCar`!
 
 
 
-Provade att skapa en ny bokning och loggade sedan ut. Satte in bokningsid i `deleteBooking` och det bekräftade...
+Provade att skapa en ny bokning och loggade sedan ut. Satte in bokningsid i `deleteBooking` och ...
 Bokningen raderades!
 
 
