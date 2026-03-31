@@ -43,9 +43,7 @@ genom `getBookingsForCar`.
 Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
 Jag hade hittat en Broken Access Control!
 
-Om sårbarheten hade utnyttjats så hade vem som helst kunnat avboka alla bokningar i systemet. Jag kontaktade företaget för att göra responsible disclosure.
-Jag fick kontakt med deras CTO och de gav ersättning för buggen. De lyckades täppa till sårbarheten och tackade.
-Ju mer skyddat ett API ser ut, desto mer sällan kollar man vad som valideras.
+Om sårbarheten hade utnyttjats så hade vem som helst kunnat avboka alla bokningar i systemet. Företaget hade förlorat alla intäkter från bokningarna och aktiva användare hade riskerat att bli strandsatta. Jag kontaktade företaget för att göra en responsible disclosure. Deras CTO svarade och de åtgärdade buggen. De hade inget officiellt bug bounty program men jag fakturerade ett femsiffrigt belopp för samarbetet. De tackade mig för ett *"gott och etiskt samarbete"*. Ju mer skyddat ett API ser ut, desto mer sällan kollar man vad som valideras.
 <br>
 <br>
 <br>
