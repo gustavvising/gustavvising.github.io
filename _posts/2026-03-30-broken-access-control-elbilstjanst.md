@@ -19,9 +19,8 @@ koden fanns någon annanstans...
 *Dekompilering av index.android.bundle.*
 <br>
 <br>
-Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera.
-Då upptäckte jag att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
-över queries och mutations i API:et.
+Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera och jag upptäckte då att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
+över queries och mutations i API:et. Trots att de hade stängt av introspection.
 
 Jag testade mig fram och ganska snart dök något upp. En mutation som hette `deleteBooking` gav inte
 **unauthorized** som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
