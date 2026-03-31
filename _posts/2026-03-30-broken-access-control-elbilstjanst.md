@@ -38,7 +38,7 @@ genom `getBookingsForCar`.
 <br>
 <br>
 ![Boknings-ID:n listade via query](/assets/images/bookings.jpg)
-*Boknings-ID:n för ett fordon listade.*
+*Boknings-ID:n för ett fordon.*
 <br>
 <br>
 Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
