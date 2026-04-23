@@ -6,4 +6,4 @@ permalink: /ai/
 
 # Notes on background colors
 
-![background reference](/assets/payload.jpg)
+![background reference](/assets/images/payload.jpg)
