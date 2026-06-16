@@ -1,15 +1,17 @@
 ---
 ---
+/* Hämtar JetBrains Mono från Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 @import "minima";
 
-// Här skriver vi över Minimas standardfärger
+// Applicera JetBrains Mono på hela sajten
 body {
     background-color: #16191f !important;
     color: #cbd5e1 !important;
-    font-family: 'Fira Code', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
-// Gör rutan runt själva blogginnehållet mörk
+// Layout-containrar
 .site-header, .site-footer, .page-content {
     background-color: #16191f !important;
 }
@@ -17,9 +19,10 @@ body {
 // Rubriker och sajtens titel
 .site-title, .site-title:visited, h1, h2, h3, h4, .post-link {
     color: #ffffff !important;
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
-// Rosa/röda länkar (som på fluxsec)
+// Rosa/röda länkar och datum
 a, .post-meta {
     color: #ff657a !important;
 }
@@ -29,6 +32,7 @@ pre, code {
     background-color: #1e222b !important;
     border: 1px solid #2d3139 !important;
     color: #e06c75 !important;
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
 // Citatblock
