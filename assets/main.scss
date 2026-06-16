@@ -1,0 +1,39 @@
+---
+---
+@import "minima";
+
+// Här skriver vi över Minimas standardfärger
+body {
+    background-color: #16191f !important;
+    color: #cbd5e1 !important;
+    font-family: 'Fira Code', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+}
+
+// Gör rutan runt själva blogginnehållet mörk
+.site-header, .site-footer, .page-content {
+    background-color: #16191f !important;
+}
+
+// Rubriker och sajtens titel
+.site-title, .site-title:visited, h1, h2, h3, h4, .post-link {
+    color: #ffffff !important;
+}
+
+// Rosa/röda länkar (som på fluxsec)
+a, .post-meta {
+    color: #ff657a !important;
+}
+
+// Kodblock
+pre, code {
+    background-color: #1e222b !important;
+    border: 1px solid #2d3139 !important;
+    color: #e06c75 !important;
+}
+
+// Citatblock
+blockquote {
+    border-left: 4px solid #61afef !important;
+    background-color: #1e222b !important;
+    color: #abb2bf !important;
+}
