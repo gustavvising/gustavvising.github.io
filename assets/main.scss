@@ -1,8 +1,9 @@
 ---
 ---
-/* Hämtar JetBrains Mono från Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 @import "minima";
+
+/* Hämtar fonten här under istället */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 // Bas
 body {
@@ -42,14 +43,14 @@ body {
     font-family: 'JetBrains Mono', monospace !important;
 }
 
-// Rubriker och sajtens titel
-.site-title, .site-title:visited, h1, h2, h3, h4, .post-link {
+// Rubriker
+h1, h2, h3, h4, .post-link {
     color: #ffffff !important;
     font-family: 'JetBrains Mono', monospace !important;
     font-weight: 700 !important;
 }
 
-// H2 med ljusblå vänsterborder - som "Intro", "The code", "Welcome"
+// H2 med ljusblå vänsterborder
 h2 {
     border-left: 4px solid #5b9fd4 !important;
     padding-left: 12px !important;
@@ -66,12 +67,12 @@ hr {
     border-top: 1px solid #3a3d45 !important;
 }
 
-// Orange-röda länkar - som "Win32 / Rust", "GitHub"
-a, .post-meta {
+// Orange-röda länkar
+a {
     color: #e07040 !important;
 }
 
-// Fetstil är orange-röd - "Welcome to my blog!", "One important thing"
+// Fetstil
 strong, b {
     color: #e07040 !important;
     font-weight: 700 !important;
