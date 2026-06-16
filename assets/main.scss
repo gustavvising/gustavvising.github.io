@@ -1,43 +1,238 @@
----
----
 /* Hämtar JetBrains Mono från Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 @import "minima";
 
-// Applicera JetBrains Mono på hela sajten
+/* =============================================
+   Exakt matchning av fluxsec.red-designen
+   Bakgrund: #1c1e24 (mörkblågrå)
+   Text: #c8cdd6
+   Accent: #e07040 (orange-röd)
+   H2-border: #5b9fd4 (ljusblå)
+   Kod: #7ec8e3 på #23272e
+   ============================================= */
+
+/* Bas */
 body {
-    background-color: #16191f !important;
-    color: #cbd5e1 !important;
+    background-color: #1c1e24 !important;
+    color: #c8cdd6 !important;
     font-family: 'JetBrains Mono', monospace !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
 }
 
-// Layout-containrar
-.site-header, .site-footer, .page-content {
-    background-color: #16191f !important;
+/* Layout-containrar */
+.site-header,
+.site-footer,
+.page-content,
+.wrapper {
+    background-color: #1c1e24 !important;
 }
 
-// Rubriker och sajtens titel
-.site-title, .site-title:visited, h1, h2, h3, h4, .post-link {
+/* Site header - ingen border */
+.site-header {
+    border-top: none !important;
+    border-bottom: 1px solid #2d3139 !important;
+}
+
+/* Sajtens titel / logo */
+.site-title,
+.site-title:visited {
     color: #ffffff !important;
     font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px !important;
 }
 
-// Rosa/röda länkar och datum
-a, .post-meta {
-    color: #ff657a !important;
+.site-title:hover {
+    color: #e07040 !important;
+    text-decoration: none !important;
 }
 
-// Kodblock
-pre, code {
-    background-color: #1e222b !important;
-    border: 1px solid #2d3139 !important;
-    color: #e06c75 !important;
+/* Navigeringslänkar */
+.site-nav .page-link {
+    color: #c8cdd6 !important;
     font-family: 'JetBrains Mono', monospace !important;
 }
 
-// Citatblock
+.site-nav .page-link:hover {
+    color: #e07040 !important;
+}
+
+/* ---- RUBRIKER ---- */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700 !important;
+}
+
+/* H1: stor, ren vit - som "Remote process DLL injection in Rust" */
+h1 {
+    font-size: 2em !important;
+    margin-bottom: 0.25em !important;
+}
+
+/* H2: med ljusblå vänsterborder - som "Intro", "The code", "Welcome" */
+h2 {
+    font-size: 1.4em !important;
+    border-left: 4px solid #5b9fd4 !important;
+    padding-left: 12px !important;
+    margin-left: -16px !important;
+}
+
+h3 {
+    font-size: 1.15em !important;
+}
+
+/* Post-titlar i listor */
+.post-link {
+    color: #ffffff !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700 !important;
+}
+
+.post-link:hover {
+    color: #e07040 !important;
+    text-decoration: none !important;
+}
+
+/* ---- DATUM / META ---- */
+.post-meta {
+    color: #8b95a3 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.85em !important;
+}
+
+/* ---- KURSIV DESCRIPTION (undertitel till post) ---- */
+/* "You can't see me if I'm over there hiding inside the sofa." */
+.post-description,
+p em:only-child,
+h1 + hr + p em {
+    color: #8b95a3 !important;
+    font-style: italic !important;
+}
+
+/* ---- DIVIDER ---- */
+hr {
+    border: none !important;
+    border-top: 1px solid #3a3d45 !important;
+    margin: 1.5em 0 !important;
+}
+
+/* ---- LÄNKAR ---- */
+/* Vanliga länkar: orange-röd, som "Win32 / Rust", "GitHub" */
+a {
+    color: #e07040 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #f08050 !important;
+    text-decoration: underline !important;
+}
+
+a:visited {
+    color: #c86030 !important;
+}
+
+/* ---- FETSTIL / STRONG ---- */
+/* "Welcome to my blog!", "Why do I like offensive security", "One important thing" */
+strong, b {
+    color: #e07040 !important;
+    font-weight: 700 !important;
+}
+
+/* ---- KODBLOCK ---- */
+/* Inline kod */
+code {
+    background-color: #23272e !important;
+    border: 1px solid #2d3139 !important;
+    color: #7ec8e3 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.9em !important;
+    padding: 2px 5px !important;
+    border-radius: 3px !important;
+}
+
+/* Block-kod */
+pre {
+    background-color: #23272e !important;
+    border: 1px solid #2d3139 !important;
+    border-radius: 4px !important;
+    padding: 1em 1.2em !important;
+    overflow-x: auto !important;
+}
+
+pre code {
+    color: #c8cdd6 !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0.88em !important;
+    line-height: 1.6 !important;
+}
+
+/* Syntax-highlighting: nyckelord (const, fn, let) */
+pre .k,
+pre .kd,
+pre .kn,
+pre .kr { color: #e07040 !important; }  /* orange-röd */
+
+/* Strängar */
+pre .s,
+pre .s1,
+pre .s2 { color: #98c379 !important; }  /* grön */
+
+/* Kommentarer */
+pre .c,
+pre .c1,
+pre .cm { color: #5c6370 !important; font-style: italic !important; }
+
+/* Siffror */
+pre .m,
+pre .mi,
+pre .mf { color: #d19a66 !important; }
+
+/* ---- CITATBLOCK ---- */
 blockquote {
-    border-left: 4px solid #61afef !important;
-    background-color: #1e222b !important;
-    color: #abb2bf !important;
+    border-left: 4px solid #5b9fd4 !important;
+    background-color: #23272e !important;
+    color: #8b95a3 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    padding: 0.75em 1em !important;
+    margin: 1em 0 !important;
+}
+
+blockquote p {
+    color: #8b95a3 !important;
+}
+
+/* ---- LISTOR ---- */
+ul, ol {
+    color: #c8cdd6 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+    border-top: 1px solid #2d3139 !important;
+    color: #5c6370 !important;
+}
+
+.site-footer a {
+    color: #8b95a3 !important;
+}
+
+.site-footer a:hover {
+    color: #e07040 !important;
+}
+
+/* ---- SCROLLBAR (webkit) ---- */
+::-webkit-scrollbar {
+    width: 6px;
+    background: #1c1e24;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a3d45;
+    border-radius: 3px;
 }
