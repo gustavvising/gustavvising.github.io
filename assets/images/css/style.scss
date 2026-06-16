@@ -1,0 +1,38 @@
+---
+---
+/* Detta hämtar ditt nuvarande dolda tema i bakgrunden */
+@import "{{ site.theme }}";
+
+/* Här skriver vi över färgerna till fluxsec.red-stilen */
+body {
+    background-color: #16191f !important; /* Mörk bakgrund */
+    color: #cbd5e1 !important;            /* Ljusgrå text */
+    font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+}
+
+/* Rubriker */
+h1, h2, h3, h4 {
+    color: #ffffff !important;
+}
+
+/* Rosa/röda länkar */
+a {
+    color: #ff657a !important;
+    text-decoration: none !important;
+}
+a:hover {
+    text-decoration: underline !important;
+}
+
+/* Kodblock (anpassat för mörk bakgrund) */
+pre, code {
+    background-color: #1e222b !important;
+    color: #e06c75 !important;
+}
+
+/* Citatblock / blockquotes */
+blockquote {
+    border-left: 4px solid #61afef !important;
+    background-color: #1e222b !important;
+    color: #abb2bf !important;
+}
