@@ -1,0 +1,44 @@
+body {
+    background-color: #16191f;
+    color: #cbd5e1;            
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    line-height: 1.7;
+    padding: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+    font-family: 'Fira Code', monospace;
+}
+
+
+a, .highlight {
+    color: #ff657a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+blockquote {
+    border-left: 4px solid #61afef;
+    background-color: #1e222b;
+    padding: 15px;
+    margin: 20px 0;
+    color: #abb2bf;
+}
+
+
+pre, code {
+    background-color: #1e222b;
+    color: #e06c75;
+    font-family: monospace;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
