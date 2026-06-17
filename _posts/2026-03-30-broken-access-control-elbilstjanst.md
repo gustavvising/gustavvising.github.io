@@ -8,7 +8,7 @@ date: 2026-03-30
 Det här är historien om hur jag hittade en *Broken Access Control-sårbarhet* som gjorde det möjligt
 att avboka godtyckliga bokningar i en svensk elbilstjänst. I praktiken innebar det att vem som helst kunde avboka andras bokningar.
 
-Först ville jag förstå hur systemet kommunicerade med fordonen och med backend.
+Först ville jag förstå hur systemet var uppbyggt och kommunicerade med fordonen.
 Tjänsten använde en app för att hyra och låsa upp deras bilar. För att identifiera och komma åt API:et
 var det snabbaste sättet att reverse-engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg såg
 jag att appen använde React och hade minimalt med synlig kod. Då först blev jag förvånad och trodde att appen laddade in en webbsida
