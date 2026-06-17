@@ -4,6 +4,7 @@ title: "Hur jag hittade en Broken Access Control i en svensk elbilstjänst"
 date: 2026-03-30
 ---
 
+<br>
 Det här är historien om hur jag hittade en *Broken Access Control-sårbarhet* som gjorde det möjligt
 att avboka godtyckliga bokningar i en svensk elbilstjänst. I praktiken innebar det att vem som helst kunde avboka andras bokningar.
 
@@ -17,9 +18,8 @@ koden fanns någon annanstans...
 <br>
 <figure style="text-align: center; margin: 35px 0;">
   <img src="/assets/images/hbc_disasm_av_bundle.png" alt="Dekompilering av bundle-filen">
-  <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Dekompilering av index.android.bundle.</figcaption>
+  <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Dekompilering av index.android.bundle</figcaption>
 </figure>
-<br>
 <br>
 Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera och jag upptäckte då att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
 över queries och mutations i API:et. Trots att de hade stängt av introspection.
@@ -38,9 +38,10 @@ Härifrån kunde jag lista alla platser och deras fordon. Därefter kunde jag h�
 genom `getBookingsForCar`.
 <br>
 <br>
-![Boknings-ID:n listade via query](/assets/images/bookings.png)
-*Boknings-ID:n för ett fordon.*
-<br>
+<figure style="text-align: center; margin: 35px 0;">
+  <img src="/assets/images/bookings.png" alt="Boknings-ID:n listade via query">
+  <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Boknings-ID:n för ett fordon.</figcaption>
+</figure>
 <br>
 Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
 Jag hade hittat en Broken Access Control!
