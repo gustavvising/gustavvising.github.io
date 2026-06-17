@@ -18,7 +18,7 @@ koden fanns någon annanstans...
   <img src="/assets/images/hbc_disasm_av_bundle.png" alt="Dekompilering av bundle-filen">
   <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Dekompilering av index.android.bundle</figcaption>
 </figure>
-Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera och jag upptäckte då att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
+Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse-engineera och jag upptäckte då att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
 över queries och mutations i API:et. Trots att de hade stängt av introspection.
 
 Jag testade mig fram och ganska snart dök något upp. En mutation som hette `deleteBooking` gav inte
