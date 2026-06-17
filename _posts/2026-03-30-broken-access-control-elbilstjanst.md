@@ -10,7 +10,7 @@ att avboka godtyckliga bokningar i en svensk elbilstjänst. I praktiken innebar 
 
 Först ville jag förstå hur systemet kommunicerade med fordonen och med backend.
 Tjänsten använde en app för att hyra och låsa upp deras bilar. För att identifiera och komma åt API:et
-var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg såg
+var det snabbaste sättet att reverse-engineera APK:en. När jag hade öppnat APK:en i ett dekompileringsverktyg såg
 jag att appen använde React och hade minimalt med synlig kod. Då först blev jag förvånad och trodde att appen laddade in en webbsida
 och att API:et fanns i React javascript. Efter att jag hittade ordet *"Hermes"* i en konfigureringsfil och läste på om vad det betydde, insåg jag att
 koden fanns någon annanstans...
