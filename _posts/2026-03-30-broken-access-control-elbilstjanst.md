@@ -15,8 +15,10 @@ och att API:et fanns i React javascript. Efter att jag hittade ordet *"Hermes"* 
 koden fanns någon annanstans...
 <br>
 <br>
-![Dekompilering av bundle-filen](/assets/images/hbc_disasm_av_bundle.png)
-*Dekompilering av index.android.bundle.*
+<figure style="text-align: center; margin: 35px 0;">
+  <img src="/assets/images/hbc_disasm_av_bundle.png" alt="Dekompilering av bundle-filen">
+  <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Dekompilering av index.android.bundle.</figcaption>
+</figure>
 <br>
 <br>
 Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera och jag upptäckte då att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
