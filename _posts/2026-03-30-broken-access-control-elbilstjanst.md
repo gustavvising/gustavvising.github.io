@@ -14,20 +14,17 @@ var det snabbaste sättet att reverse engineera APK:en. När jag hade öppnat AP
 jag att appen använde React och hade minimalt med synlig kod. Då först blev jag förvånad och trodde att appen laddade in en webbsida
 och att API:et fanns i React javascript. Efter att jag hittade ordet *"Hermes"* i en konfigureringsfil och läste på om vad det betydde, insåg jag att
 koden fanns någon annanstans...
-<br>
-<br>
 <figure style="text-align: center; margin: 35px 0;">
   <img src="/assets/images/hbc_disasm_av_bundle.png" alt="Dekompilering av bundle-filen">
   <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Dekompilering av index.android.bundle</figcaption>
 </figure>
-<br>
 Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse engineera och jag upptäckte då att appen kommunicerade över GraphQL. Efter lite mer trixande fick jag fram ett strukturerat schema
 över queries och mutations i API:et. Trots att de hade stängt av introspection.
 
 Jag testade mig fram och ganska snart dök något upp. En mutation som hette `deleteBooking` gav inte
 **unauthorized** som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
 
-Men för att det skulle vara en konkret risk behövdes andra personers boknings-ID:n.
+För att det skulle vara en konkret risk behövdes andra personers boknings-ID:n.
 För att få en större attackyta skapade jag en legitim session via BankID.
 Jag upptäckte mutationerna `authBankID`, `authenticate` och satte ihop ett Python-skript för att automatisera processen.
 Först anropade jag `authBankID` för att få `autoStartToken` och sedan pollade jag `authenticate` en gång i sekunden tills
@@ -36,13 +33,10 @@ en inloggning bekräftades via BankID-appen med `autoStartToken`.
 Beväpnad med en giltig session kunde jag utforska fler funktioner i systemet.
 Härifrån kunde jag lista alla platser och deras fordon. Därefter kunde jag hämta bokningar för fordon
 genom `getBookingsForCar`.
-<br>
-<br>
 <figure style="text-align: center; margin: 35px 0;">
   <img src="/assets/images/bookings.png" alt="Boknings-ID:n listade via query">
   <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Boknings-ID:n för ett fordon.</figcaption>
 </figure>
-<br>
 Jag testade att skapa en ny bokning och loggade sedan ut. Placerade boknings-ID:et i `deleteBooking`, tryckte på kör — och den försvann!
 Jag hade hittat en Broken Access Control!
 
