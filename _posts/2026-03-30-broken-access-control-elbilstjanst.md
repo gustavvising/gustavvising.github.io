@@ -37,7 +37,7 @@ genom `getBookingsForCar`.
   <img src="/assets/images/bookings.png" alt="Boknings-ID:n listade via query">
   <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Boknings-ID:n för ett fordon.</figcaption>
 </figure>
-Jag testade att skapa en ny bokning och loggade sedan ut. Placerade sedan boknings-ID:et i `deleteBooking`, körde ... och bokningen försvann!
+Jag testade att skapa en ny bokning och loggade sedan ut. Efter det placerade jag boknings-ID:et i `deleteBooking`, körde ... och bokningen försvann!
 Jag hade hittat en Broken Access Control!
 
 Om sårbarheten hade utnyttjats så hade vem som helst kunnat avboka alla bokningar i systemet. Företaget hade förlorat alla intäkter från bokningarna och aktiva användare hade riskerat att bli strandsatta. Jag kontaktade företaget för att göra en responsible disclosure. Deras CTO svarade och de åtgärdade buggen. De hade inget officiellt bug bounty program men jag fakturerade ett femsiffrigt belopp för samarbetet. De tackade mig för ett *"gott och etiskt samarbete"*. Ju mer skyddat ett API ser ut, desto mer sällan kollar man vad som valideras.
