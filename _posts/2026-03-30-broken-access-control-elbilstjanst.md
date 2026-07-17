@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hur jag hittade en Broken Access Control i en svensk elbilstjänst"
+title: "Hur jag hittade en broken access control i en svensk elbilstjänst"
 date: 2026-03-30
 ---
 
