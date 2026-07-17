@@ -83,7 +83,7 @@ em, i {
     position: fixed;
     inset: 0;
 
-    z-index: -1;
+    z-index: 0;
 
     overflow: hidden;
 
@@ -131,4 +131,12 @@ em, i {
 
 .red {
     color: #d36b6b;
+}
+
+.site-header,
+.site-footer,
+.page-content,
+.wrapper {
+    position: relative;
+    z-index: 1;
 }
