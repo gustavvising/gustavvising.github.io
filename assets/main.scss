@@ -2,38 +2,30 @@
 ---
 @import "minima";
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-
-// Bas
 body {
     background-color: #1c1e24 !important;
     color: #c8cdd6 !important;
-    font-family: 'JetBrains Mono', monospace !important;
+    font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif !important;
     font-size: 16px !important;
     line-height: 1.75 !important;
 }
 
-// Layout-containrar
 .site-header, .site-footer, .page-content, .wrapper {
     background-color: #1c1e24 !important;
 }
 
-// Site header
 .site-header {
     border-top: none !important;
     border-bottom: 1px solid #2d3139 !important;
 }
 
-// Gömmer hela navigeringsmenyn på sajten
 .site-nav {
     display: none !important;
 }
 
-
-// Sajtens titel / logo
 .site-title, .site-title:visited {
     color: #ffffff !important;
-    font-family: 'JetBrains Mono', monospace !important;
+    font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -42,70 +34,58 @@ body {
     text-decoration: none !important;
 }
 
-// Navigeringslänkar
 .site-nav .page-link {
     color: #c8cdd6 !important;
-    font-family: 'JetBrains Mono', monospace !important;
+    font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif !important;
 }
 
-// Rubriker
 h1, h2, h3, h4, .post-link {
     color: #ffffff !important;
-    font-family: 'JetBrains Mono', monospace !important;
+    font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif !important;
     font-weight: 700 !important;
 }
 
-// H2 med ljusblå vänsterborder
 h2 {
     border-left: 4px solid #5b9fd4 !important;
     padding-left: 12px !important;
 }
 
-// Datum och meta
 .post-meta {
     color: #8b95a3 !important;
 }
 
-// Divider
 hr {
     border: none !important;
     border-top: 1px solid #3a3d45 !important;
 }
 
-// Orange-röda länkar
 a {
-    color: #e07040 !important;
+    color: #ed2939 !important;
 }
 
-// Fetstil
 strong, b {
-    color: #e07040 !important;
+    color: #ed2939 !important;
     font-weight: 700 !important;
 }
 
-// Kodblock
 pre, code {
     background-color: #23272e !important;
     border: 1px solid #2d3139 !important;
     color: #7ec8e3 !important;
-    font-family: 'JetBrains Mono', monospace !important;
+   font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif !important;
 }
 
-// Citatblock
 blockquote {
     border-left: 4px solid #5b9fd4 !important;
     background-color: #23272e !important;
     color: #8b95a3 !important;
 }
 
-// Footer
 .site-footer {
     border-top: 1px solid #2d3139 !important;
     color: #5c6370 !important;
 }
 
-// Kursiv text blir ljusgrå
 em, i {
-    color: #abb2bf !important; /* En dämpad, stilren grå. Vill du ha ännu ljusare kan du testa #abb2bf */
+    color: #abb2bf !important;
 }
-
