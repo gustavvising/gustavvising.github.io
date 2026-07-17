@@ -14,7 +14,7 @@ var det snabbaste sättet att reverse-engineera APK:en. När jag hade öppnat AP
 jag att appen använde React och hade minimalt med synlig kod. Då först blev jag förvånad och trodde att appen laddade in en webbsida
 och att API:et fanns i React javascript. Efter att jag hittade ordet *"Hermes"* i en konfigureringsfil och läste på om vad det betydde, insåg jag att
 koden fanns någon annanstans...
-<figure style="text-align: center; margin: 35px 0;">
+<figure style="text-align: left; margin: 35px 0;">
   <img src="/assets/images/hbc_disasm_av_bundle.png" alt="Dekompilering av bundle-filen">
   <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Dekompilering av index.android.bundle</figcaption>
 </figure>
@@ -22,7 +22,7 @@ Efter dekompilering fick jag ut en hasm-fil. Den började jag reverse-engineera 
 över queries och mutations i API:et. Trots att de hade stängt av introspection.
 
 Jag testade mig fram och ganska snart dök något upp. En mutation som hette `deleteBooking` gav inte
-**unauthorized** som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
+unauthorized som de flesta övriga funktioner gjorde. Jag tänkte direkt *"tänk om det finns en broken access control här..."*.
 
 För att det skulle vara en konkret risk behövdes andra personers boknings-ID:n.
 För att få en större attackyta skapade jag en legitim session via BankID.
@@ -33,7 +33,7 @@ en inloggning bekräftades via BankID-appen med `autoStartToken`.
 Beväpnad med en giltig session kunde jag utforska fler funktioner i systemet.
 Härifrån kunde jag lista alla platser och deras fordon. Därefter kunde jag hämta bokningar för fordon
 genom `getBookingsForCar`.
-<figure style="text-align: center; margin: 35px 0;">
+<figure style="text-align: left; margin: 35px 0;">
   <img src="/assets/images/bookings.png" alt="Boknings-ID:n listade via query">
   <figcaption style="font-style: italic; color: #888; margin-top: 8px; font-size: 0.9em;">Boknings-ID:n för ett fordon.</figcaption>
 </figure>
