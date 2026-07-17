@@ -33,14 +33,28 @@ for (let i = 0; i < 45; i++) {
 
     while(bytes.length < 16){
 
-        if(Math.random() < 0.75){
-            bytes.push("00");
-        }
-        else {
-            bytes.push(
-                ops[Math.floor(Math.random()*ops.length)]
-            );
-        }
+        let chance = Math.random();
+
+if (chance < 0.65) {
+
+    bytes.push("00");
+
+}
+else if (chance < 0.85) {
+
+    bytes.push(
+        ops[Math.floor(Math.random()*ops.length)]
+    );
+
+}
+else {
+
+    bytes.push(
+        ["CC","FF","E8","48","8B","90"]
+        [Math.floor(Math.random()*6)]
+    );
+
+}
     }
 
     bytes = bytes.join(" ").split(" ");
