@@ -45,11 +45,6 @@ h1, h2, h3, h4, .post-link {
     font-weight: 700 !important;
 }
 
-h2 {
-    border-left: 4px solid #5b9fd4 !important;
-    padding-left: 12px !important;
-}
-
 .post-meta {
     color: #8b95a3 !important;
 }
@@ -64,15 +59,8 @@ a {
 }
 
 strong, b {
-    color: #cb4154 !important;
+    color: #0277BD !important;
     font-weight: 700 !important;
-}
-
-pre, code {
-    background-color: #23272e !important;
-    border: 1px solid #2d3139 !important;
-    color: #7ec8e3 !important;
-   font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif !important;
 }
 
 .site-footer {
