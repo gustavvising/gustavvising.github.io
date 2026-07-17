@@ -63,17 +63,23 @@ else {
 
         let cls = "zero";
 
-        if(byte === "00"){
-            cls = "zero";
-        }
-        else if(
-            ["CC","FF","E8"].includes(byte)
-        ){
-            cls = "red";
-        }
-        else{
-            cls = "green";
-        }
+        if (byte === "00") {
+
+    cls = "zero";
+
+}
+else if (
+    ["CC","FF","E8","90"].includes(byte)
+) {
+
+    cls = "red";
+
+}
+else {
+
+    cls = "green";
+
+}
 
         output += `<span class="${cls}">${byte}</span> `;
     });
