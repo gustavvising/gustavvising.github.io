@@ -85,9 +85,12 @@ em, i {
 
     z-index: 0;
 
-    overflow: hidden;
-
     pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
 
     font-family: "JetBrains Mono", monospace;
     font-size: 12px;
@@ -95,27 +98,30 @@ em, i {
 
     opacity: .12;
 
-    padding: 30px;
-
     mask-image:
-        linear-gradient(
-            to bottom,
-            transparent,
-            black 20%,
-            black 80%,
-            transparent
-        );
+    linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 25%,
+        black 70%,
+        transparent 100%
+    );
 
-    -webkit-mask-image:
-        linear-gradient(
-            to bottom,
-            transparent,
-            black 20%,
-            black 80%,
-            transparent
-        );
+-webkit-mask-image:
+    linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 25%,
+        black 70%,
+        transparent 100%
+    );
 }
 
+#memory-bg > div {
+
+    width: min(900px, 100vw);
+
+}
 
 .mem-address {
     color: #4d7ca8;
