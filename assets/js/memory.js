@@ -17,7 +17,8 @@ const ops = [
 
 let output = "";
 
-const totalRows = 300;
+const rowHeight = 5;
+const totalRows = Math.ceil(window.innerHeight / rowHeight);
 const bytesPerRow = Math.ceil(window.innerWidth / 8);
 
 for (let i = 0; i < totalRows; i++) {
