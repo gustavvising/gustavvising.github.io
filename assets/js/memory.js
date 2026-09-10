@@ -17,74 +17,73 @@ const ops = [
 
 let output = "";
 
-for (let i = 0; i < 45; i++) {
+const totalRows = 300;
+const bytesPerRow = Math.ceil(window.innerWidth / 8);
 
-    let address =
+for (let i = 0; i < totalRows; i++) {
+
+    const address =
         "0x00007FF6" +
         (0x200000 + i * 16)
-        .toString(16)
-        .toUpperCase();
+            .toString(16)
+            .toUpperCase();
 
-    output += `<div>
-        <span class="mem-address">${address}</span>
-        `;
+    output += `<div><span class="mem-address">${address}</span> `;
 
     let bytes = [];
 
-    while(bytes.length < 16){
+    while (bytes.length < bytesPerRow) {
 
-        let chance = Math.random();
+        const chance = Math.random();
 
-if (chance < 0.65) {
+        if (chance < 0.55) {
 
-    bytes.push("00");
+            bytes.push("00");
 
-}
-else if (chance < 0.85) {
+        }
+        else if (chance < 0.73) {
 
-    bytes.push(
-        ops[Math.floor(Math.random()*ops.length)]
-    );
+            const instruction =
+                ops[Math.floor(Math.random() * ops.length)];
 
-}
-else {
+            bytes.push(...instruction.split(" "));
 
-    bytes.push(
-        ["CC","FF","E8","48","8B","90"]
-        [Math.floor(Math.random()*6)]
-    );
+        }
+        else if (chance < 0.76) {
 
-}
+            bytes.push("??");
+
+        }
+        else {
+
+            bytes.push(
+                ["CC", "FF", "E8", "90"][
+                    Math.floor(Math.random() * 4)
+                ]
+            );
+        }
     }
 
-    bytes = bytes.join(" ").split(" ");
+    bytes = bytes.slice(0, bytesPerRow);
 
     bytes.forEach(byte => {
 
-        let cls = "zero";
+        let cls = "green";
 
         if (byte === "00") {
-
-    cls = "zero";
-
-}
-else if (
-    ["CC","FF","E8","90"].includes(byte)
-) {
-
-    cls = "red";
-
-}
-else {
-
-    cls = "green";
-
-}
+            cls = "zero";
+        }
+        else if (["CC", "FF", "E8", "90"].includes(byte)) {
+            cls = "red";
+        }
+        else if (byte === "??") {
+            cls = "unknown";
+        }
 
         output += `<span class="${cls}">${byte}</span> `;
     });
 
-    output += "</div>";
+    output += `</div>`;
 }
 
 memory.innerHTML = output;

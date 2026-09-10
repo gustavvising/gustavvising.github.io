@@ -4,27 +4,31 @@ layout: default
 
 <div id="memory-bg"></div>
 
-<p style="margin-bottom: 20px;">
-  A cybersecurity blog.
-</p>
+<div class="memory-page-content">
 
-<div style="margin-bottom: 6px;">
-  <a href="https://github.com/gustavvising" target="_blank">GitHub ↗</a>
+  <p style="margin-bottom: 20px;">
+    A cybersecurity blog.
+  </p>
+
+  <div style="margin-bottom: 6px;">
+    <a href="https://github.com/gustavvising" target="_blank">GitHub ↗</a>
+  </div>
+
+  <hr style="margin: 0 0 40px 0;">
+
+  {{ content }}
+
+  <h2 style="margin-top: 0 !important; margin-bottom: 25px !important;">Posts</h2>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      </li>
+    {% endfor %}
+  </ul>
+
 </div>
-
-<hr style="margin: 0 0 40px 0;">
-
-{{ content }}
-
-<h2 style="margin-top: 0 !important; margin-bottom: 25px !important;">Posts</h2>
-
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    </li>
-  {% endfor %}
-</ul>
 
 <script src="{{ '/assets/js/memory.js' | relative_url }}"></script>
